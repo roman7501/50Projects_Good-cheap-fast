@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.option {
+  display: flex;
+  width: 150px;
+  align-items: center;
+}
+
+button {
+  background-color: #d0d0d0;
+  border: none;
+  width: 70px;
+  border-radius: 25px;
+  height: 40px;
+  margin-right: 12px;
+  position: relative;
+  transition: background-color 0.3s ease;
+  outline: none;
+  cursor: pointer;
+}
+
+button::before {
+  --offset: 3px;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(40px - var(--offset) * 2);
+  height: calc(40px - var(--offset) * 2);
+  border-radius: 50%;
+  background-color: #fff;
+  transform: translate3d(var(--offset), var(--offset), 0);
+  transition: 0.3s ease;
+}
+
+button.active {
+  background-color: #8e44ad;
+}
+
+button.active::before {
+  transform: translate3d(calc(100% - var(--offset)), var(--offset), 0);
+}
